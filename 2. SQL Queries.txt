@@ -1,0 +1,89 @@
+
+SELECT neighbourhood_158, offence, COUNT(*) AS crime_count
+FROM toronto_crime
+WHERE occ_year = 2025 
+AND neighbourhood_158 IN ('Mimico-Queensway (160)', 'West Humber-Clairville (1)', 
+'York University Heights (27)', 'Moss Park (73)', 'Yonge-Bay Corridor (170)',
+'Downtown Yonge East (168)', 'Annex (95)', 'Kensington-Chinatown (78)', 
+'Wellington Place (164)', 'St Lawrence-East Bayfront-The Islands (166)')
+GROUP BY neighbourhood_158, offence
+ORDER BY neighbourhood_158, crime_count DESC;
+
+========================================================================================================================================================================
+SELECT occ_hour,
+COUNT (*) AS hourly_crime
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY occ_hour
+ORDER BY hourly_crime DESC;
+
+========================================================================================================================================================================
+SELECT occ_hour,
+COUNT (*) AS hourly_crime
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY occ_hour
+ORDER BY hourly_crime DESC;
+
+========================================================================================================================================================================
+SELECT occ_dow,
+COUNT (*) AS weekly_crime
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY occ_dow
+ORDER BY weekly_crime DESC;
+
+========================================================================================================================================================================
+SELECT occ_month,
+COUNT (*) AS crime
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY occ_month
+ORDER BY crime DESC;
+
+==========================================================================================================================================================================
+SELECT offence,
+COUNT (*)
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY offence
+ORDER BY COUNT (*) DESC;
+
+=========================================================================================================================================================================
+SELECT occ_year,
+       COUNT(*) AS crimes
+FROM toronto_crime
+WHERE occ_year BETWEEN 2020 AND 2025
+GROUP BY occ_year
+ORDER BY occ_year;
+
+=========================================================================================================================================================================
+SELECT neighbourhood_158,
+       COUNT(*) AS crimes_2025
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY neighbourhood_158
+ORDER BY crimes_2025 DESC;
+
+==========================================================================================================================================================================
+SELECT occ_dow, occ_hour,
+       COUNT(*) AS total_crimes
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY occ_dow, occ_hour
+ORDER BY occ_dow, occ_hour DESC;
+
+=========================================================================================================================================================================
+SELECT neighbourhood_158,
+       COUNT(*) AS crimes_2024
+FROM toronto_crime
+WHERE occ_year = 2024
+GROUP BY neighbourhood_158
+ORDER BY crimes_2024 DESC;
+=========================================================================================================================================================================
+SELECT neighbourhood_158,
+       COUNT(*) AS crimes_2025
+FROM toronto_crime
+WHERE occ_year = 2025
+GROUP BY neighbourhood_158
+ORDER BY crimes_2025 DESC;
